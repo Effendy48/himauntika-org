@@ -84,7 +84,7 @@
         function input_hasil_agenda($id,$agenda){
             $koneksi = new koneksi();
             $query_hasil = mysqli_query($koneksi->konek(),"UPDATE agenda SET hasil_agenda = '$agenda', status_hasil_agenda='FIX' WHERE kode_agenda = '$id'");
-            if($query_agenda){
+            if($query_hasil){
                 echo "<script>alert('Berhasil');
                 document.location='?p=agenda'</script>";
             }else{
@@ -95,6 +95,11 @@
             $koneksi = new koneksi();
             $query_agenda = mysqli_query($koneksi->konek(),"SELECT * FROM agenda ORDER BY kode_agenda desc");
             return $query_agenda;
+        }
+        function tampil_hasil_agenda($id){
+            $koneksi = new koneksi();
+            $query_hasil_agenda = mysqli_query($koneksi->konek(),"SELECT * FROM agenda where kode_agenda = '$id'");
+            return $query_hasil_agenda;
         }
     }
     class admin{

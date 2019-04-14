@@ -26,9 +26,9 @@
                                 <!--Hidden Hasil Agenda -->
                                 <input type="hidden" id="hasil_agenda" value="<?php echo htmlspecialchars($rec['hasil_agenda']); ?>">
                                         <?php if($rec['status_hasil_agenda'] == "NFIX"){ ?>
-                                            <a href="" data-toggle="modal" data-target="#modal-add-result-agenda" style="font-size:12px;"><i class="fa fa-paperclip"></i> Add Hasil Agenda</a>
+                                            <a href="?p=add-hasil-agenda&id=<?php echo $rec['kode_agenda'] ?>&nama_agenda=<?php echo $rec['nama_agenda'] ?>" style="font-size:12px;"><i class="fa fa-paperclip"></i> Add Hasil Agenda</a>
                                         <?php }else{ ?>
-                                            <a href="" data-toggle="modal" data-target="#modal-hasil-agenda" style="font-size:12px;"><i class="fa fa-poll"></i> Hasil Agenda</a>
+                                            <a href="?p=hasil-agenda&id=<?php echo $rec['kode_agenda']; ?>" style="font-size:12px;"><i class="fa fa-poll"></i> Hasil Agenda</a>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -101,17 +101,6 @@
         </div>
 </div>
 <!--End Modal Input Agenda-->
-<!--Modal Hasil Agenda -->
-<div class="modal fade" id="modal-hasil-agenda">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <textarea name="" id="view-hasil-agenda" cols="40" rows="40"></textarea>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Modal Hasil Agenda-->
 <script>
     var kode_agenda = document.getElementById("kode_agenda").value;
     var hasil_agenda = document.getElementById("hasil_agenda").value;
