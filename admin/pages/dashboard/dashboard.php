@@ -70,6 +70,7 @@
     $koneksi = new koneksi();
     $anggota = new anggota();
     $divisi = new divisi();
+    $agenda = new agenda();
 ?>  
 <body>
     <!-- Left Panel -->
@@ -81,7 +82,7 @@
                     <li class="menu-title">Master Data</li>
                     <li><a href="?p=anggota"> <i class="menu-icon fa fa-users"></i>Anggota </a></li>                    
                     <li><a href="?p=divisi"> <i class="menu-icon fa fa-briefcase"></i>Divisi </a></li>
-                    <li><a href="widgets.html"> <i class="menu-icon fa fa-calendar"></i>Agenda </a></li>
+                    <li><a href="?p=agenda"> <i class="menu-icon fa fa-calendar"></i>Agenda </a></li>
                     <li><a href="widgets.html"> <i class="menu-icon fa fa-newspaper"></i>Artikel </a></li>
                     <!-- /.menu-title -->
                    
@@ -269,6 +270,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/ckeditor/ckeditor.js"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>

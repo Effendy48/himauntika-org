@@ -70,6 +70,33 @@
             }
         }
     }
+    class agenda{
+        function input_agenda($agenda,$tgl_agenda){
+            $koneksi = new koneksi();
+            $query_agenda = mysqli_query($koneksi->konek(),"INSERT INTO agenda(nama_agenda,tanggal_agenda,status_hasil_agenda)values('$agenda','$tgl_agenda','NFIX')");
+            if($query_agenda){
+                echo "<script>alert('Berhasil');
+                document.location='?p=agenda'</script>";
+            }else{
+                echo "<script>alert('Gagal')</script>";
+            }
+        }
+        function input_hasil_agenda($id,$agenda){
+            $koneksi = new koneksi();
+            $query_hasil = mysqli_query($koneksi->konek(),"UPDATE agenda SET hasil_agenda = '$agenda', status_hasil_agenda='FIX' WHERE kode_agenda = '$id'");
+            if($query_agenda){
+                echo "<script>alert('Berhasil');
+                document.location='?p=agenda'</script>";
+            }else{
+                echo "<script>alert('Gagal')</script>";
+            }
+        }
+        function tampil_agenda(){
+            $koneksi = new koneksi();
+            $query_agenda = mysqli_query($koneksi->konek(),"SELECT * FROM agenda ORDER BY kode_agenda desc");
+            return $query_agenda;
+        }
+    }
     class admin{
         function login_admin($email,$password){
             $koneksi = new koneksi();
