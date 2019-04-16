@@ -102,6 +102,30 @@
             return $query_hasil_agenda;
         }
     }
+    class absen{
+        function cek_absen($rfid){
+            $koneksi = new koneksi();
+            $query = mysqli_query($koneksi->konek(),"SELECT * FROM anggota,divisi,absen where anggota.kd_divisi = divisi.kd_divisi and anggota.kode_anggota = absen.kode_anggota and anggota.kode_rfid = '$rfid'");
+            return $query;
+        }
+        function input_absen($kd_anggota,
+        $jam_masuk,$kode_agenda,$tgl_absen){
+            $koneksi = new koneksi();
+            $query = mysqli_query(
+                $koneksi->konek(),
+                "INSERT INTO absen(kode_anggota,
+                jam_masuk,
+                jam_keluar,
+                kode_agenda,
+                tgl_absen) 
+            VALUES('$kd_anggota','$jam_masuk','KOSONG','$kode_agenda','$tgl_absen')");
+        }
+        function edit_absen($kode_absen, $jam_keluar){
+            $koneksi = new koneksi();
+            $query = mysqli_query($koneksi->konek(),"UPDATE absen SET jam_keluar ='$jam_keluar' WHERE kode_absen = '$kode_absen'");
+
+        }
+    }
     class admin{
         function login_admin($email,$password){
             $koneksi = new koneksi();

@@ -71,6 +71,7 @@
     $anggota = new anggota();
     $divisi = new divisi();
     $agenda = new agenda();
+    $absen = new absen();
 ?>  
 <body>
     <!-- Left Panel -->
@@ -102,7 +103,7 @@
                     </li> -->
 
                     <li class="menu-title">Absensi</li><!-- /.menu-title -->
-                    <li><a href="widgets.html"> <i class="menu-icon fa fa-fingerprint"></i>Absen Anggota </a></li>
+                    <li><a href="?p=absen-anggota"> <i class="menu-icon fa fa-fingerprint"></i>Absen Anggota </a></li>
                 
                     <li class="menu-title">Laporan</li><!-- /.menu-title -->
                     <li><a href=""><i class="menu-icon fa fa-file-pdf"></i> Laporan Absensi</a></li>
