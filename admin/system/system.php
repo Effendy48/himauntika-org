@@ -6,10 +6,10 @@
     }
     
     class anggota{
-        function input_anggota($nim_anggota,$nama_anggota,$alamat_anggota,$jenkel_anggota, $no_telp_anggota, $email_anggota, $kd_divisi,$foto_anggota, $tempat_lahir,$tgl_lahir,$semester){
+        function input_anggota($nim_anggota,$nama_anggota,$alamat_anggota,$jenkel_anggota, $no_telp_anggota, $email_anggota, $kd_divisi,$foto_anggota, $tempat_lahir,$tgl_lahir,$semester,$kode_rfid){
           $koneksi = new koneksi();
-          $query = mysqli_query($koneksi->konek(), "INSERT INTO anggota(nim_anggota,nama_anggota,alamat_anggota,jenkel_anggota,no_telp_anggota,email_anggota,kd_divisi,foto_anggota,tempat_lahir,tgl_lahir,semester)
-             values('$nim_anggota','$nama_anggota','$alamat_anggota','$jenkel_anggota','$no_telp_anggota','$email_anggota','$kd_divisi','$foto_anggota','$tempat_lahir','$tgl_lahir','$semester')");
+          $query = mysqli_query($koneksi->konek(), "INSERT INTO anggota(nim_anggota,nama_anggota,alamat_anggota,jenkel_anggota,no_telp_anggota,email_anggota,kd_divisi,foto_anggota,tempat_lahir,tgl_lahir,semester,kode_rfid)
+             values('$nim_anggota','$nama_anggota','$alamat_anggota','$jenkel_anggota','$no_telp_anggota','$email_anggota','$kd_divisi','$foto_anggota','$tempat_lahir','$tgl_lahir','$semester','$kode_rfid')");
              if($query){
                  echo "<script>alert('Berhasil');
                  document.location='?p=anggota'</script>";
@@ -105,7 +105,12 @@
     class absen{
         function cek_absen($rfid){
             $koneksi = new koneksi();
-            $query = mysqli_query($koneksi->konek(),"SELECT * FROM anggota,divisi,absen where anggota.kd_divisi = divisi.kd_divisi and anggota.kode_anggota = absen.kode_anggota and anggota.kode_rfid = '$rfid'");
+            $tgl = date('Y-m-d');
+            $query = mysqli_query($koneksi->konek(),
+            "SELECT * FROM anggota,divisi,absen 
+            where anggota.kd_divisi = divisi.kd_divisi
+             and anggota.kode_anggota = absen.kode_anggota 
+             and anggota.kode_rfid = '$rfid' and absen.tgl_absen = '$tgl'");
             return $query;
         }
         function input_absen($kd_anggota,

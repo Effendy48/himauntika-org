@@ -24,7 +24,7 @@
                 
                     <div class="col-sm-8">
                         <div class="form-group">
-                            <input type="text" name="rfid" class="form-control" placeholder="Kode Anggota">
+                            <input type="text" name="rfid" class="form-control" placeholder="Kode Anggota" autofocus>
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -66,7 +66,7 @@
                                     $jam_masuk = date('Y-m-d H:i:s');
                                     $tgl_absen = date('Y-m-d');
                                     $absen->input_absen($kd_anggota,$jam_masuk,$kode_agenda,$tgl_absen);
-                                    echo "<script>alert('Berhasil')</script>";
+ 
                                     
                                 }
                             }
@@ -86,27 +86,25 @@
                 <div class="row">
                   <table class="table">
                         <tr>
-                            <th>Kode Absen</th>
-                            <th>Kode Anggota</th>
-                            <th>Nama Anggota</th>
-                            <th>Divisi</th>
-                            <th>Tanggal Masuk</th>
-                            <th>Tanggal Keluar</th>
+                            <th class="title-table-th">Kode Absen</th>
+                            <th class="title-table-th">Nama Anggota</th>
+                            <th class="title-table-th">Divisi</th>
+                            <th class="title-table-th">Tanggal Masuk</th>
+                            <th class="title-table-th">Tanggal Keluar</th>
                         </tr>
                         <?php 
                             $query = $absen->cek_absen(@$_REQUEST['rfid']);
                             $arr = mysqli_fetch_array($query);
                         ?>
                         <tr>
-                            <td><?php echo $arr['kode_absen']; ?></td>
-                            <td><?php echo $arr['kode_anggota']; ?></td>
-                            <td><?php echo $arr['nama_anggota']; ?></td>
-                            <td><?php echo $arr['divisi']; ?></td>
-                            <td><?php echo date('l, d F Y H:i:s',strtotime($arr['jam_masuk'])) ?></td>
+                            <td style="font-size:12px;"><?php echo $arr['kode_absen']; ?></td>
+                            <td style="font-size:12px;"><?php echo $arr['nama_anggota']; ?></td>
+                            <td style="font-size:12px;"><?php echo $arr['divisi']; ?></td>
+                            <td style="font-size:12px;"><?php echo date('l, d F Y H:i:s',strtotime($arr['jam_masuk'])) ?></td>
                             <?php if($arr['jam_keluar'] == "KOSONG"){ ?>
-                            <td><b style="color:red;">Belum Keluar</b></td>
+                            <td style="font-size:12px;"><b style="color:red;">Belum Keluar</b></td>
                             <?php }else{ ?>
-                            <td><?php echo date('l, d F Y H:i:s',strtotime($arr['jam_keluar'])) ?></td>
+                            <td style="font-size:12px;"><?php echo date('l, d F Y H:i:s',strtotime($arr['jam_keluar'])) ?></td>
                             <?php } ?>
                         </tr>    
                   </table>

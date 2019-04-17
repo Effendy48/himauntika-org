@@ -10,8 +10,8 @@
     <meta name="description" content="Himauntika Panel Administration">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="apple-touch-icon" href="http://himauntika.org/images/logo-himauntika.png">
+    <link rel="shortcut icon" href="http://himauntika.org/images/logo-himauntika.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -126,13 +126,14 @@
     <div id="right-panel" class="right-panel">
         <!-- Header-->
         <header id="header" class="header">
-            <div class="top-left">
+        <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"></a>
+                    <a class="navbar-brand" href="./"><img src="images/admin_panel.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
+
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">

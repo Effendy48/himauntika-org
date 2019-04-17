@@ -63,7 +63,7 @@
                                                     <label class="control-label mb-1"><i class="fa fa-map-marker"></i> Tempat Lahir</label>
                                                     <input name="tempat_lahir" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" placeholder="Tempat Lahir ">
                                                 </div>
-                                                <div class="form-group col-sm-6">
+                                                <div class="form-group col-sm-3">
                                                     <label for="cc-number" class="control-label mb-1"><i class="fa fa-calendar"></i> Tanggal Lahir</label>
                                                     <input name="tgl_lahir" type="date" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
                                                     <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
@@ -71,6 +71,11 @@
                                                 <div class="form-group col-sm-3">
                                                     <label for="cc-number" class="control-label mb-1"><i class="fa fa-school"></i> Semester</label>
                                                     <input type="text" name="semester" class="form-control cc-number identified visa" value="" placeholder="Semester">
+                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label for="cc-number" class="control-label mb-1"><i class="fa fa-id-card"></i> Kode RFID</label>
+                                                    <input type="text" name="kode_rfid" class="form-control cc-number identified visa" value="" placeholder="Kode RFID">
                                                     <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -94,6 +99,7 @@
                                                 $tempat_lahir = $_POST['tempat_lahir'];
                                                 $tgl_lahir = $_POST['tgl_lahir'];
                                                 $semester = $_POST['semester'];
+                                                $kode_rfid = $_POST['kode_rfid'];
                                                 
                                                 $anggota->input_anggota(
                                                  $nim,
@@ -105,7 +111,8 @@
                                                  $divisi,
                                                  $tempat_lahir,
                                                  $tgl_lahir,
-                                                 $semester);
+                                                 $semester,
+                                                 $kode_rfid);
                                                 
 
                                             }

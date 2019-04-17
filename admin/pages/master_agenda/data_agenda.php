@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="row">
                                 <div class="col-sm-2"></div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-6">
 
                                 <!--Hidden Kode Agenda-->
                                 <input type="hidden" id="kode_agenda" value="<?php echo $rec['kode_agenda']; ?>">
@@ -28,7 +28,8 @@
                                         <?php if($rec['status_hasil_agenda'] == "NFIX"){ ?>
                                             <a href="?p=add-hasil-agenda&id=<?php echo $rec['kode_agenda'] ?>&nama_agenda=<?php echo $rec['nama_agenda'] ?>" style="font-size:12px;"><i class="fa fa-paperclip"></i> Add Hasil Agenda</a>
                                         <?php }else{ ?>
-                                            <a href="?p=hasil-agenda&id=<?php echo $rec['kode_agenda']; ?>" style="font-size:12px;"><i class="fa fa-poll"></i> Hasil Agenda</a>
+                                            <a href="?p=hasil-agenda&id=<?php echo $rec['kode_agenda']; ?>" style="font-size:12px;"><i class="fa fa-poll"></i> Hasil</a>&nbsp;&nbsp;
+                                            <a href="?p=data-absen-anggota&id=<?php echo $rec['kode_agenda']; ?>" style="font-size:12px;"><i class="fa fa-users"></i> Absen</a>
                                         <?php } ?>
                                     </div>
                                 </div>

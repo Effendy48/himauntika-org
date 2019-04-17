@@ -262,12 +262,11 @@ Googel Fonts  */
     padding: 0; }
   .tdl-holder li {
     position: relative;
-    background-color: transparent;
     list-style: outside none none;
     margin: 0;
     padding: 7px 0; }
     .tdl-holder li:after, .tdl-holder li:before {
-      content: "\f142";
+      
       top: 24px;
       position: absolute;
       font: normal normal normal 14px/1 FontAwesome;
@@ -2533,6 +2532,12 @@ ul.timeline > li:before {
   width: 20px;
   height: 20px;
   z-index: 400;
+}
+.title-table-th{
+  font-size:13px;
+}
+.title-table-td{
+  font-size:12px;
 }
 
 
